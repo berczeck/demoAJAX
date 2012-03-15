@@ -1,1 +1,4 @@
-$("#usuarios").html("<%= escape_javascript(render(@usuarios)) %>");
+$("#usuarios").empty();
+<% @usuarios.each do |u| %>
+  $("#usuarios").append("<li><%= u.nombre %></li>");
+<% end %>

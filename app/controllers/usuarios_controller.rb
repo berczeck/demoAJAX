@@ -3,6 +3,10 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.search(params[:search])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /usuarios/1
